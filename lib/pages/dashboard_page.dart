@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_app/pages/detail_page.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -249,64 +250,70 @@ Stack _productItem(
     children: [
       ClipRRect(
         borderRadius: BorderRadius.circular(10),
-        child: GestureDetector(
-          onTap: () {},
-          child: Column(
-            children: [
-              Container(
-                color: const Color(0xfff8f8fa),
-                width: 220,
-                height: 280,
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Align(
-                        alignment: Alignment.topRight,
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.favorite_border,
-                            color: Color(0xfff79b0d),
-                          ),
-                        ),
-                      ),
-                      Image.asset(
-                        imgPath,
-                        width: 150,
-                        height: 150,
-                        fit: BoxFit.cover,
-                      ),
-                      const SizedBox(height: 10),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                name,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                ),
+        child: Builder(
+          builder: (context) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (_) => const DetailPage()));
+              },
+              child: Column(
+                children: [
+                  Container(
+                    color: const Color(0xfff8f8fa),
+                    width: 220,
+                    height: 280,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.favorite_border,
+                                color: Color(0xfff79b0d),
                               ),
-                              Text(
-                                "\$$price",
-                                style: const TextStyle(fontSize: 16),
-                              ),
-                            ],
+                            ),
                           ),
-                        ),
-                      )
-                    ],
+                          Image.asset(
+                            imgPath,
+                            width: 150,
+                            height: 150,
+                            fit: BoxFit.cover,
+                          ),
+                          const SizedBox(height: 10),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    name,
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    "\$$price",
+                                    style: const TextStyle(fontSize: 16),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
-          ),
+            );
+          }
         ),
       ),
     ],
