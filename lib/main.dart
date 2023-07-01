@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_app/pages/detail_page.dart';
 import 'package:shoes_app/pages/dashboard_page.dart';
 
 void main() {
@@ -20,3 +21,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
