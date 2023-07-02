@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shoes_app/pages/detail_page.dart';
-import 'package:shoes_app/pages/dashboard_page.dart';
+import 'package:shoes_app/pages/onboarding_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const DashboardPage(),
+      home: const OnboardingPage(),
       debugShowCheckedModeBanner: false,
     );
   }
